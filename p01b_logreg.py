@@ -34,18 +34,18 @@ class LogisticRegression(LinearModel):
         > clf.fit(x_train, y_train)
         > clf.predict(x_eval)
     """
-    # def loaddataset(self, n ,train_path ):
-    #     x= util.load_dataset(train_path, label_col='y', add_intercept= True)
-    #     if (n==1 or n==2):
-    #         y= np.zeros(len(x[0]))
-    #         for i in range(len(x[0])):
-    #             y[i]= x[0][i][n-1]
-    #         return y
-    #     else:
-    #         y= np.zeros(len(x[1]))
-    #         for i in range(len(x[1])):
-    #             y[i]= x[1][i]
-    #         return y
+    def loaddataset(self, n ,train_path ):
+        x= util.load_dataset(train_path, label_col='y', add_intercept= True)
+        if (n==1 or n==2):
+            y= np.zeros(len(x[0]))
+            for i in range(len(x[0])):
+                y[i]= x[0][i][n-1]
+            return y
+        else:
+            y= np.zeros(len(x[1]))
+            for i in range(len(x[1])):
+                y[i]= x[1][i]
+            return y
 
 
     def fit(self, x, y):
